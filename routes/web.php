@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookmarkController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'ContactController@index')->name('welcome');
+Route::get('/', [BookmarkController::class, 'index'])
+    ->name('bookmarks.index');
