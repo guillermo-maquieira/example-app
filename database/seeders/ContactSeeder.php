@@ -16,7 +16,8 @@ class ContactSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        foreach (range(1,3) as $index){
+        // $faker->addProvider(new Faker\Provider\es_ES\Person($faker));
+        foreach (range(1,5) as $index){
             DB::table('contacts')->insert([
                 'id' => $faker->randomNumber(),
                 'first_name' => $faker->firstName,
