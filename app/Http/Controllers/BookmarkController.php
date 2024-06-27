@@ -13,4 +13,11 @@ class BookmarkController extends Controller
         $bookmarks = Bookmark::all();
         return View::make('bookmarks.index')->with(['bookmarks' => $bookmarks]);
     }
+
+    public function show($id)
+    {
+        $bookmark = bookmark::find($id);
+        return View::make('bookmarks.show')->with(['bookmark' => $bookmark]);
+    }
+
 }

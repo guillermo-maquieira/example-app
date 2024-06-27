@@ -9,6 +9,7 @@
                 <td>ID</td>
                 <td>Name</td>
                 <td>Link</td>
+                <td>Acción</td>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <td>{{ $value->id }}</td>
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->link }}</td>
+                    <td><a class="btn btn-small btn-info" href="{{ route('bookmarks.show', $value) }}">Ver</a></td>
                 </tr>
             @endforeach
             @else
