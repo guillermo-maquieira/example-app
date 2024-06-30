@@ -20,4 +20,11 @@ class BookmarkController extends Controller
         return View::make('bookmarks.show')->with(['bookmark' => $bookmark]);
     }
 
+    public function destroy($id)
+    {
+        $bookmark = Bookmark::find($id);
+        $bookmark->delete();
+        return redirect()->route('bookmarks.index');
+    }
+
 }

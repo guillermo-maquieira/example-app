@@ -7,3 +7,4 @@ Route::get('/', [BookmarkController::class, 'index'])
     ->name('bookmarks.index');
 Route::get('/bookmarks/{bookmark}', [BookmarkController::class, 'show'])
     ->name('bookmarks.show');
+Route::delete('/bookmarks/{favorite}', [BookmarkController::class, 'destroy'])->name('bookmarks.destroy');
