@@ -17,6 +17,18 @@
             <div class="col-xs-12 col-md-10">
                 <a href="{{ $bookmark->link }}" target="_blank">{{ $bookmark->link }} </a>
             </div>
+            <div class="col-xs-12 col-md-2">
+                <strong>Created at:</strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{ $bookmark->created_at }}
+            </div>
+            <div class="col-xs-12 col-md-2">
+                <strong>Updated at:</strong>
+            </div>
+            <div class="col-xs-12 col-md-10">
+                {{ $bookmark->updated_at }}
+            </div>
         </div>
     </div>
 @endsection
