@@ -11,6 +11,7 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('bookmarks.index') }}">Ver Mis Bookmarks</a></li>
+                <li><a href="{{ route('bookmarks.create') }}">Agregar Bookmark</a>
             </ul>
         </div>
     </nav>
