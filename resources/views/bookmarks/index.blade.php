@@ -19,12 +19,14 @@
                     <td>{{ $value->id }}</td>
                     <td>{{ $value->name }}</td>
                     <td>{{ $value->link }}</td>
-                    <td><a class="btn btn-small btn-info" href="{{ route('bookmarks.show', $value) }}"><span class="glyphicon glyphicon-zoom-in"></span></a>
-                    <form action="{{ route('bookmarks.destroy', $value->id) }}" method="Post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
-                    </form>
+                    <td>
+                        <a class="btn btn-small btn-info" href="{{ route('bookmarks.show', $value) }}"><span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a class="btn btn-small btn-info" href="{{ route('bookmarks.edit', $value) }}"><span class="glyphicon glyphicon-pencil"></a>
+                        <form action="{{ route('bookmarks.destroy', $value->id) }}" method="Post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

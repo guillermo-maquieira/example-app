@@ -42,6 +42,24 @@ class BookmarkController extends Controller
         $bookmark->name = $request->name;
         $bookmark->link = $request->link;
         $bookmark->save();
-        return redirect()->route('bookmarks.index')->with('success', 'Bookmark creado correctamente.');
+        return redirect()->route('bookmarks.index');
+    }
+    public function edit($id)
+    {
+        $bookmark = Bookmark::find($id);
+        return View::make('bookmarks.edit')->with(['bookmark' => $bookmark]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'link' => 'required',
+        ]);
+        $bookmark = Bookmark::find($id);
+        $bookmark->name = $request->name;
+        $bookmark->link = $request->link;
+        $bookmark->save();
+        return redirect()->route('bookmarks.index');
     }
 }
